@@ -1,7 +1,9 @@
+import Form from "./components/Form";
+
 export default function App() {
   return (
-    <>
-      <h2>Hello from App</h2>
-    </>
+    <section className="section-center">
+      <Form />
+    </section>
   );
 }
