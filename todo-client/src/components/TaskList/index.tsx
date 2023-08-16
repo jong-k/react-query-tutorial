@@ -1,13 +1,13 @@
 import Task from "../Task";
+import { useFetchTasks } from "../../hooks/queries/useFetchTasks";
 
-interface TaskListProps {
-  tasks: TaskType[];
-}
+export default function TaskList() {
+  const { data, isLoading, error } = useFetchTasks();
 
-export default function TaskList({ tasks }: TaskListProps) {
   return (
     <div className="taskList">
-      {tasks.map((task) => {
+      {isLoading && }
+      {data.map((task) => {
         return <Task key={task.id} task={task} />;
       })}
     </div>
