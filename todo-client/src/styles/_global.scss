@@ -236,19 +236,21 @@ form h4 {
   border-bottom-right-radius: v.$borderRadius;
 }
 
-.items {
+.taskList {
   margin-top: 2rem;
   display: grid;
   row-gap: 1rem;
 }
-.single-item {
+
+.task-container {
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 1rem;
   align-items: center;
-}
-.single-item p {
-  letter-spacing: v.$letterSpacing;
+
+  p {
+    letter-spacing: v.$letterSpacing;
+  }
 }
 
 .remove-btn {

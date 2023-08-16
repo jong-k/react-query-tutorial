@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function Form() {
   const [taskTitle, setTaskTitle] = useState("");
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
 
   return (
     <form onSubmit={handleSubmit}>
