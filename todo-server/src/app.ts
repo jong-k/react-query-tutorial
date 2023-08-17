@@ -17,9 +17,14 @@ let taskList = [
   { id: uuidv4(), title: "신발장 정리하기", isDone: false },
   { id: uuidv4(), title: "빨래 개기", isDone: false },
 ];
+const auth = "passed";
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello from server!</h1>");
+app.post("/auth", (req, res) => {
+  if (req.body.auth === auth) {
+    res.send("yes");
+  } else {
+    res.send("no");
+  }
 });
 
 app.get("/api/tasks", (req, res) => {
