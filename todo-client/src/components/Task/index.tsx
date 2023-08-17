@@ -1,10 +1,12 @@
+import s from "./index.module.scss";
+
 interface TaskProps {
   task: TaskType;
 }
 
 export default function Task({ task }: TaskProps) {
   return (
-    <div className="task-container">
+    <div className={s.taskContainer}>
       <input
         type="checkbox"
         checked={task.isDone}
@@ -26,7 +28,7 @@ export default function Task({ task }: TaskProps) {
         type="button"
         onClick={() => console.log("할 일 제거하기")}
       >
-        제거
+        X
       </button>
     </div>
   );

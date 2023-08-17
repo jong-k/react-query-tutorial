@@ -36,7 +36,7 @@ app.post("/api/tasks", (req, res) => {
   const newTask = { id: uuidv4(), title, isDone: false };
   taskList = [...taskList, newTask];
   console.log(taskList);
-  res.json({ taskList });
+  res.json({ message: "할 일이 추가되었습니다." });
 });
 
 app.patch("/api/tasks/:id", (req, res) => {
