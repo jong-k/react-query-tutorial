@@ -1,4 +1,5 @@
 import { useUpdateIsDone } from "../../hooks/mutations/useUpdateIsDone";
+import { useDeleteTask } from "../../hooks/mutations/useDeleteTask";
 import s from "./index.module.scss";
 
 interface TaskProps {
@@ -7,6 +8,7 @@ interface TaskProps {
 
 export default function Task({ task }: TaskProps) {
   const { updateIsDone } = useUpdateIsDone();
+  const { deleteTask } = useDeleteTask();
 
   return (
     <div className={s.taskContainer}>
@@ -29,7 +31,7 @@ export default function Task({ task }: TaskProps) {
       <button
         className="btn remove-btn"
         type="button"
-        onClick={() => console.log("할 일 제거하기")}
+        onClick={() => deleteTask(task.id)}
       >
         X
       </button>

@@ -3,7 +3,12 @@ import { postTask } from "../../api/task";
 
 export const useAddTask = () => {
   const queryClient = useQueryClient();
-  const { mutate: addTask, data, error, isLoading } = useMutation({
+  const {
+    mutate: addTask,
+    data,
+    error,
+    isLoading,
+  } = useMutation({
     mutationFn: (taskTitle: string) => postTask(taskTitle),
     onSuccess: () => {
       console.log(data);
