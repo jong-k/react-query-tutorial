@@ -16,13 +16,11 @@
   align-items: center;
 }
 
-// .spinnerBlade {
-//   position: absolute;
-//   background: transparent;
-//   width: 1rem;
-//   height: 0.2rem;
-//   transform: rotate(${(p) => `${p.idx * (360 / p.total)}deg`});
-//   transform-origin: 175% 50%;
-//   animation: ${bladeFade} 1s infinite linear;
-//   animation-delay: ${(p) => p.idx * (1 / p.total)}s;
-// }
+.spinnerBlade {
+  position: absolute;
+  background: transparent;
+  width: 1rem;
+  height: 0.2rem;
+  transform-origin: 175% 50%;
+  animation: bladeFade 1s infinite linear;
+}

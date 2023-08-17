@@ -1,7 +1,7 @@
 import s from "./index.module.scss";
 
 interface LoadingSpinnerProps {
-  bladeNum: number;
+  bladeNum?: number;
 }
 
 export default function LoadingSpinner({ bladeNum = 12 }: LoadingSpinnerProps) {
@@ -14,7 +14,10 @@ export default function LoadingSpinner({ bladeNum = 12 }: LoadingSpinnerProps) {
           <div
             key={i}
             className={s.spinnerBlade}
-            style={{ transform: "rotate" }}
+            style={{
+              transform: `rotate(${i * (360 / bladeNum)}deg)`,
+              animationDelay: `${i * (1 / bladeNum)}s`,
+            }}
           />
         ))}
       </div>
