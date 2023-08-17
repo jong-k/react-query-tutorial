@@ -4,12 +4,12 @@ import { useAddTask } from "../../hooks/mutations/useAddTask";
 
 export default function Form() {
   const [taskTitle, setTaskTitle] = useState("");
-  const { mutate, error, isLoading } = useAddTask();
+  const { addTask, error, isLoading } = useAddTask();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!taskTitle.trim()) return;
-    mutate(taskTitle);
+    addTask(taskTitle);
     if (error) console.log(error);
     setTaskTitle("");
   };

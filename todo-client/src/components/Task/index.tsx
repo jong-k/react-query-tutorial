@@ -1,3 +1,4 @@
+import { useUpdateIsDone } from "../../hooks/mutations/useUpdateIsDone";
 import s from "./index.module.scss";
 
 interface TaskProps {
@@ -5,12 +6,14 @@ interface TaskProps {
 }
 
 export default function Task({ task }: TaskProps) {
+  const { updateIsDone } = useUpdateIsDone();
+
   return (
     <div className={s.taskContainer}>
       <input
         type="checkbox"
         checked={task.isDone}
-        onChange={() => console.log("할 일 수정하기")}
+        onChange={() => updateIsDone({ id: task.id, isDone: !task.isDone })}
       />
       <p
         style={
