@@ -1,16 +1,27 @@
-# Blog-em Ipsum
-## 1. Intro
-- jsonplaceholder API에서 제공하는 lorem insum 데이터를 블로그형태로 UI에 전달
-## 2. Work flow
-### 2.1. install package
-- @tanstack/react-query
-- @tanstack/react-query-devtools
-### 2.2. create QueryClient and add QueryProvider
-- App.tsx
-### 2.3. useQuery for data
-- data, isLoading, isFetching, isError, error 등
-- re-fetch가 필요하면 staleTime 설정 (디폴트: 0ms)
-- cacheTime을 설정해서 inactivity 상태 이후에 얼마나 오래 데이터를 보관할지 설정 (기본값 5분)
-- 쿼리 키를 배열 형태로 전달 + 의존성 배열
-- prefetching
-- pagination# Blog-em Ipsum
+# React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
