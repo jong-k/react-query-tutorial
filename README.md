@@ -49,6 +49,17 @@ refetch를 유발하는 트리거 종류
 - automated refetch
 - query invalidation
 
+### 1.8. Prefetching
+- 데이터를 미리 받아와 캐시에 추가
+- 페이지네이션을 구현할 때, 페이지를 빠르게 넘기다보면 프리페칭중 로딩 인디케이터가 동작한다
+  - 이 때, `keepPreviousData: true` 프로퍼티를 쿼리 옵션에 추가하여 최근 페칭한 데이터를 로딩중에 표시하여 UI를 향상할 수 있다
+
+### 1.9. Mutation
+- useMutation Hook 사용하며 useQuery와 다른 점이 존재
+  - mutate 함수를 반환
+  - query key 불필요
+  - isLoading은 있으나 isFetching은 없음
+  - 실패 시 기본적으로 재시도 X (useQuery의 경우 3회 재시도)
 
 ## 2. PJT: Blog-em Ipsum
 ### 소개
